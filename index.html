@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+<title>rarphoto</title>
+</head>
+<body>
+    <h3 class='title'>rar<span class='blue'>photo</span></h3>
+    <canvas id='canvas' width='800px' height='500px'></canvas>
+    <div class='center'>
+    <button onClick="window.location.reload();" class='button'>Generează o nouă imagine</button>
+       <button class='button' onClick="ReImg.fromCanvas(document.querySelector('#canvas1')).downloadPng();">Descarcă imaginea</button> 
+    </div>
+    <canvas id='canvas1'></canvas>
+    <img src="waterfall.jpg" alt="image" id="image">
+    <script type='module' src="main.js"></script> 
+
+    <script type='module' src="./functions/fetchImage.js"></script>
+    <script type='module' src="./functions/drawText.js"></script>
+    <script type='module' src="./functions/drawImage.js"></script>
+    <script type='module' src="./functions/wrapText.js"></script>
+    <script type='module' src="./functions/blur.js"></script>
+    <script type='module' src="./functions/resetFilter.js"></script>
+    <script type='module' src="./functions/textWidth.js"></script>
+    <script type='module' src="./functions/multiLineWrap.js"></script>
+
+    <script type='module' src="./content/texte.js"></script>
+
+    
+
+    <script src="foreign/reimg.js"></script>
+</body>
+</html>
