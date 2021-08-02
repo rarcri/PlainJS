@@ -2,9 +2,12 @@ import wrapText from "./wrapText.js";
 
 const multiLineWrap = (ctx, text, x, y, maxWidth, lineHeight) => {
   const textSplit = text.split(/\n/);
-  textSplit.forEach((text) => {
-    wrapText(ctx, text, x, y, maxWidth, lineHeight);
-  });
+  console.log(textSplit);
+  for (let i = 0; i < textSplit.length; i++) {
+    y = wrapText(ctx, textSplit[i], x, y, maxWidth, lineHeight);
+    y += lineHeight + 20;
+  }
+  return y;
 };
 
 export default multiLineWrap;

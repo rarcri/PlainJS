@@ -23,8 +23,10 @@ const searchTerms = [
   "nature",
   "bird",
 ];
-
-let text = texte[Math.floor(Math.random() * 15)];
+let randomNumber = Math.floor(Math.random() * 15);
+let text = texte[randomNumber].text;
+let reference = texte[randomNumber].reference;
+// let text = texte[7];
 
 img.src = await fetchImage(searchTerms);
 img.setAttribute("crossOrigin", "anonymous");
@@ -42,6 +44,10 @@ img.onload = () => {
   resetFilter(ctx1);
 
   // Draw the text
-  drawText(canvas, text);
-  drawText(canvas1, text, 75);
+  let y = drawText(canvas, text);
+  let y1 = drawText(canvas1, text, "white", "black", 0, 75);
+
+  // Draw the reference text
+  drawText(canvas, reference, "red", "white", y);
+  drawText(canvas1, reference, "red", "white", y1, 75);
 };

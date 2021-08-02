@@ -1,16 +1,25 @@
 import wrapText from "./wrapText.js";
 import multiLineWrap from "./multiLineWrap.js";
 
-function drawText(canvas, text, fontSize = 50, fontFamily = "serif") {
+function drawText(
+  canvas,
+  text,
+  fillColor = "white",
+  strokeColor = "black",
+  yMain = 0,
+  fontSize = 50,
+  fontFamily = "serif"
+) {
   let font = `${fontSize}px ${fontFamily}`;
   //Getting the context
   let ctx = canvas.getContext("2d");
 
   // Add text
   ctx.font = font;
-  ctx.fillStyle = "white";
+  ctx.lineWidth = 4;
+  ctx.fillStyle = fillColor;
 
-  ctx.strokeStyle = "black";
+  ctx.strokeStyle = strokeColor;
   ctx.textAlign = "center";
 
   var maxWidth = canvas.width - 0.1 * canvas.width;
@@ -24,10 +33,12 @@ function drawText(canvas, text, fontSize = 50, fontFamily = "serif") {
   console.log(textHeight);
 
   var x = canvas.width / 2;
-  var y = canvas.height / 2 - textHeight / 2;
+  let y = canvas.height / 2 - textHeight / 2;
 
-  // multiLineWrap(text);
-  wrapText(ctx, text, x, y, maxWidth, lineHeight);
+  if (yMain !== 0) y = yMain;
+
+  y = multiLineWrap(ctx, text, x, y, maxWidth, lineHeight);
+  return y;
 }
 
 export default drawText;

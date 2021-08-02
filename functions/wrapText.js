@@ -8,20 +8,19 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
 
   for (let i = 1; i < words.length; i++) {
     testLine += ` ${words[i]}`;
-    console.log(testLine);
-    if (textWidth(ctx, testLine) < maxWidth && words[i] !== "\n") {
+    if (textWidth(ctx, testLine) < maxWidth) {
       currentLine = testLine;
       console.log(currentLine);
       console.log("Called if");
       // For showing the last line
       if (i == words.length - 1) {
-        ctx.fillText(currentLine, x, y);
         ctx.strokeText(currentLine, x, y);
+        ctx.fillText(currentLine, x, y);
         console.log("Called if inside if");
       }
     } else {
-      ctx.fillText(currentLine, x, y);
       ctx.strokeText(currentLine, x, y);
+      ctx.fillText(currentLine, x, y);
       console.log("Called currentLine");
 
       y += lineHeight;
@@ -29,13 +28,14 @@ function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
       // For showing the last line when the last word
       // won't fit on the before last line
       if (i == words.length - 1) {
-        ctx.fillText(testLine, x, y);
         ctx.strokeText(testLine, x, y);
-        console.log("Called if inside if");
+        ctx.fillText(testLine, x, y);
+        console.log("Called if inside else");
       }
       console.log(testLine);
     }
   }
+  return y;
 }
 
 export default wrapText;
