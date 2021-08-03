@@ -9,7 +9,6 @@ import texte from "./content/texte.js";
 // Get by ID
 const canvas = document.getElementById("canvas");
 const canvas1 = document.getElementById("canvas1");
-const img = document.getElementById("image");
 
 // Get contexts
 const ctx = canvas.getContext("2d");
@@ -23,31 +22,39 @@ const searchTerms = [
   "nature",
   "bird",
 ];
-let randomNumber = Math.floor(Math.random() * 15);
-let text = texte[randomNumber].text;
-let reference = texte[randomNumber].reference;
-// let text = texte[7];
+let json = fetchImage(searchTerms);
 
-img.src = await fetchImage(searchTerms);
-img.setAttribute("crossOrigin", "anonymous");
+// Getting the data from
+json.then((data) => {
+  let randomNumber = Math.floor(Math.random() * 15);
+  let text = texte[randomNumber].text;
+  // let text = texte[7];
+  let reference = texte[randomNumber].reference;
 
-img.onload = () => {
-  // Blur Image
-  blur(ctx);
-  blur(ctx1);
+  let img = new Image();
 
-  // Draw the Image
-  drawImage(canvas, canvas1, img);
+  img.src = data.hits[Math.floor(Math.random() * 200)].largeImageURL;
 
-  // Unblur Image
-  resetFilter(ctx);
-  resetFilter(ctx1);
+  img.setAttribute("crossOrigin", "anonymous");
 
-  // Draw the text
-  let y = drawText(canvas, text);
-  let y1 = drawText(canvas1, text, "white", "black", 0, 75);
+  img.onload = () => {
+    // Blur Image
+    blur(ctx);
+    blur(ctx1);
 
-  // Draw the reference text
-  drawText(canvas, reference, "red", "white", y);
-  drawText(canvas1, reference, "red", "white", y1, 75);
-};
+    // Draw the Image
+    drawImage(canvas, canvas1, img);
+
+    // Unblur Image
+    resetFilter(ctx);
+    resetFilter(ctx1);
+
+    // Draw the text
+    let y = drawText(canvas, text);
+    let y1 = drawText(canvas1, text, "white", "black", 0, 75);
+
+    // Draw the reference text
+    drawText(canvas, reference, "red", "white", y);
+    drawText(canvas1, reference, "red", "white", y1, 75);
+  };
+}); // End of Promise
