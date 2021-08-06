@@ -53,6 +53,10 @@ json.then((data) => {
     let y = drawText(canvas, text);
     let y1 = drawText(canvas1, text, "white", "black", 0, 75);
 
+    // Add 20px to the ys
+    y += 20;
+    y1 += 20;
+
     // Draw the reference text
     drawText(canvas, reference, "red", "white", y);
     drawText(canvas1, reference, "red", "white", y1, 75);

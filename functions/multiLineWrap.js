@@ -5,7 +5,7 @@ const multiLineWrap = (ctx, text, x, y, maxWidth, lineHeight) => {
   console.log(textSplit);
   for (let i = 0; i < textSplit.length; i++) {
     y = wrapText(ctx, textSplit[i], x, y, maxWidth, lineHeight);
-    y += lineHeight + 20;
+    y += lineHeight;
   }
   return y;
 };

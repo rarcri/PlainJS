@@ -2,7 +2,7 @@ const texte = [
   // 1
   {
     id: 0,
-    text: "“Pot să se mute munții, pot să se clatine dealurile, dar dragostea Mea nu se va muta de la tine, și legământul Meu de pace nu se va clătina, zice Domnul, care are milă de tine.” \n ",
+    text: "“Pot să se mute munții, pot să se clatine dealurile, dar dragostea Mea nu se va muta de la tine, și legământul Meu de pace nu se va clătina, zice Domnul, care are milă de tine.”",
     reference: "Isaia 54:10",
   },
   // 2
@@ -95,6 +95,21 @@ const texte = [
     text: "“Fiule, nu disprețui mustrarea Domnului, și nu te mâhni de pedepsele Lui.”",
     reference: " Proverbe 3:11",
   },
+  {
+    id: 15,
+    text: "„Domnul Se va lupta pentru voi, dar voi staţi liniştiţi.”",
+    reference: "Exodul 14:14",
+  },
+  {
+    id: 16,
+    text: "„Voi umbla în mijlocul vostru; Eu voi fi Dumnezeul vostru, şi voi veţi fi poporul Meu.”",
+    reference: "Leveticul 26:12",
+  },
+  // {
+  //   id: 17,
+  //   text: "„”",
+  //   reference: "",
+  // },
 ];
 
 export default texte;

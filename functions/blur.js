@@ -1,5 +1,5 @@
 const blur = (ctx) => {
-  ctx.filter = "blur(5px)";
+  ctx.filter = "blur(3px)";
 };
 
 export default blur;
