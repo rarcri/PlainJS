@@ -10,7 +10,7 @@
   </head>
   <body>
     <h3 class="title">rar<span class="blue">photo</span></h3>
-    <canvas id="canvas" width="800px" height="500px"></canvas>
+    <!-- Buttons -->
     <div class="center">
       <button onClick="window.location.reload();" class="button">
         Generează o nouă imagine
@@ -18,13 +18,16 @@
       <button
         class="button"
         id="downloadButton"
-        onClick="ReImg.fromCanvas(document.querySelector('#canvas1')).downloadPng('rarphoto-image');"
+        onClick="ReImg.fromCanvas(document.querySelector('#canvas')).downloadPng('rarphoto-image');"
       >
         Descarcă imaginea
       </button>
     </div>
-    <canvas id="canvas1"></canvas>
+    <!-- Canvas -->
+    <canvas id="canvas" width="800px" height="500px"></canvas>
+
     <img src="waterfall.jpg" alt="image" id="image" />
+
     <script type="module" src="main.js"></script>
 
     <script type="module" src="./functions/fetchImage.js"></script>

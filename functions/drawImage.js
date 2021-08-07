@@ -1,14 +1,11 @@
-const drawImage = (canvas, canvas1, img) => {
+const drawImage = (canvas, img) => {
   // Get the context
   let ctx = canvas.getContext("2d");
-  let ctx1 = canvas1.getContext("2d");
+  canvas.width = img.width;
+  canvas.height = img.height;
+  ctx.filter = "blur(5px)";
 
-  ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-  //   Set canvas1 width and height as the image's
-  canvas1.width = img.width;
-  canvas1.height = img.height;
-  ctx1.filter = "blur(5px)";
-  ctx1.drawImage(img, 0, 0);
+  ctx.drawImage(img, 0, 0);
 };
 
 export default drawImage;
