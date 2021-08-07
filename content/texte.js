@@ -105,6 +105,11 @@ const texte = [
     text: "„Voi umbla în mijlocul vostru; Eu voi fi Dumnezeul vostru, şi voi veţi fi poporul Meu.”",
     reference: "Leveticul 26:12",
   },
+  {
+    id: 17,
+    text: "Sabat Binecuvântat!",
+    reference: "",
+  },
   // {
   //   id: 17,
   //   text: "„”",

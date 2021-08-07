@@ -8,11 +8,9 @@ import texte from "./content/texte.js";
 
 // Get by ID
 const canvas = document.getElementById("canvas");
-const canvas1 = document.getElementById("canvas1");
 
 // Get contexts
 const ctx = canvas.getContext("2d");
-const ctx1 = canvas1.getContext("2d");
 
 // Keyterms to search for on Pixabay
 const searchTerms = [
@@ -40,25 +38,20 @@ json.then((data) => {
   img.onload = () => {
     // Blur Image
     blur(ctx);
-    blur(ctx1);
 
     // Draw the Image
-    drawImage(canvas, canvas1, img);
+    drawImage(canvas, img);
 
     // Unblur Image
     resetFilter(ctx);
-    resetFilter(ctx1);
 
     // Draw the text
-    let y = drawText(canvas, text);
-    let y1 = drawText(canvas1, text, "white", "black", 0, 75);
+    let y = drawText(canvas, text, "white", "black", 0, 75);
 
-    // Add 20px to the ys
+    // Add 20px to the y
     y += 20;
-    y1 += 20;
 
     // Draw the reference text
-    drawText(canvas, reference, "red", "white", y);
-    drawText(canvas1, reference, "red", "white", y1, 75);
+    drawText(canvas, reference, "red", "white", y, 75);
   };
 }); // End of Promise

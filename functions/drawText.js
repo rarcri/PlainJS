@@ -16,7 +16,7 @@ function drawText(
 
   // Add text
   ctx.font = font;
-  ctx.lineWidth = 4;
+  ctx.lineWidth = 6;
   ctx.fillStyle = fillColor;
 
   ctx.strokeStyle = strokeColor;
