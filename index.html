@@ -10,19 +10,22 @@
   </head>
   <body>
     <h3 class="title">rar<span class="blue">photo</span></h3>
-    <!-- Buttons -->
+    <!-- Controls -->
     <div class="center">
       <button onClick="window.location.reload();" class="button">
         Generează o nouă imagine
       </button>
-      <button
-        class="button"
-        id="downloadButton"
-        onClick="ReImg.fromCanvas(document.querySelector('#canvas')).downloadPng('rarphoto-image');"
-      >
-        Descarcă imaginea
-      </button>
+      <button class="button" id="downloadButton">Descarcă imaginea</button>
     </div>
+    <div id="downloadPopUp">
+      <h3 class="text-center">Cu ce nume doriți să descărcați imaginea?</h3>
+      <div class="center">
+        <span>editează textul -&gt;</span
+        ><input type="text" value="imagine" id="downloadName" />
+        <button class="button" id="okDownloadButton">ok</button>
+      </div>
+    </div>
+
     <!-- Canvas -->
     <canvas id="canvas" width="800px" height="500px"></canvas>
     <!-- Footer -->
@@ -31,9 +34,7 @@
     </footer>
 
     <img src="waterfall.jpg" alt="image" id="image" />
-
     <script type="module" src="main.js"></script>
-
     <script type="module" src="./functions/fetchImage.js"></script>
     <script type="module" src="./functions/drawText.js"></script>
     <script type="module" src="./functions/drawImage.js"></script>
@@ -42,9 +43,9 @@
     <script type="module" src="./functions/resetFilter.js"></script>
     <script type="module" src="./functions/textWidth.js"></script>
     <script type="module" src="./functions/multiLineWrap.js"></script>
+    <script type="module" src="./functions/showDownloadPopUp.js"></script>
+    <script src="./functions/download.js"></script>
 
     <script type="module" src="./content/texte.js"></script>
-
-    <script src="foreign/reimg.js"></script>
   </body>
 </html>
