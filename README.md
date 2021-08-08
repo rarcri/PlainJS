@@ -10,5 +10,5 @@ Poate fi găsit la linkul: https://rarcri.github.io/PlainJS/
 
 
 ### TODO ###
-#### [ ] Add Keywords ####
-#### [ ] Add naming on download ####
+- [ ] Add Keywords
+- [ ] Add naming on download
