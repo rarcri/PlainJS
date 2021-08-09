@@ -107,8 +107,8 @@ const texte = [
   },
   {
     id: 17,
-    text: "Sabat Binecuvântat!",
-    reference: "",
+    text: "„Ferice de omul care nu se duce la sfatul celor răi, nu se opreşte pe calea celor păcătoşi şi nu se aşază pe scaunul celor batjocoritori!”",
+    reference: "Psalmii 1:1",
   },
   // {
   //   id: 17,
