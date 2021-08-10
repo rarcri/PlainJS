@@ -4,6 +4,7 @@ const texte = [
     id: 0,
     text: "“Pot să se mute munții, pot să se clatine dealurile, dar dragostea Mea nu se va muta de la tine, și legământul Meu de pace nu se va clătina, zice Domnul, care are milă de tine.”",
     reference: "Isaia 54:10",
+    keywords: ["green+mountains"],
   },
   // 2
   {
@@ -110,11 +111,21 @@ const texte = [
     text: "„Ferice de omul care nu se duce la sfatul celor răi, nu se opreşte pe calea celor păcătoşi şi nu se aşază pe scaunul celor batjocoritori!”",
     reference: "Psalmii 1:1",
   },
-  // {
-  //   id: 17,
-  //   text: "„”",
-  //   reference: "",
-  // },
+  {
+    id: 18,
+    text: "„Tu-mi dai mai multă bucurie în inima mea, decât au ei când li se înmulţeşte rodul grâului şi al vinului.”",
+    reference: "Psalmii 4:7",
+  },
+  {
+    id: 19,
+    text: "„Eu mă culc şi adorm în pace, căci numai Tu, Doamne, îmi dai linişte deplină în locuinţa mea.”",
+    reference: "Psalmii 4:8",
+  },
+  {
+    id: 20,
+    text: "„Atunci toţi cei ce se încred în Tine se vor bucura, se vor înveseli totdeauna, căci Tu îi vei ocroti. Tu vei fi bucuria celor ce iubesc Numele Tău.”",
+    reference: "Psalmii 5:11",
+  },
 ];
 
 export default texte;
