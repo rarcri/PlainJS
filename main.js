@@ -24,7 +24,8 @@ let json = fetchImage(searchTerms);
 
 // Getting the data from
 json.then((data) => {
-  let randomNumber = Math.floor(Math.random() * 15);
+  let nrTexteBiblice = texte.length;
+  let randomNumber = Math.floor(Math.random() * nrTexteBiblice);
   let text = texte[randomNumber].text;
   // let text = texte[7];
   let reference = texte[randomNumber].reference;
