@@ -9,14 +9,18 @@
     <title>rarphoto</title>
   </head>
   <body>
+    <!-- Title -->
     <h3 class="title">rar<span class="blue">photo</span></h3>
-    <!-- Controls -->
+
+    <!-- Buttons -->
     <div class="center">
       <button onClick="window.location.reload();" class="button">
         Generează o nouă imagine
       </button>
       <button class="button" id="downloadButton">Descarcă imaginea</button>
     </div>
+
+    <!-- Download PopUp -->
     <div id="downloadPopUp">
       <h3 class="text-center">Cu ce nume doriți să descărcați imaginea?</h3>
       <div class="center">
@@ -28,28 +32,38 @@
 
     <!-- Canvas -->
     <canvas id="canvas" width="800px" height="500px"></canvas>
+
     <!-- Footer -->
     <footer class="center">
       <a href="https://github.com/rarcri/PlainJS">&lt; github /&gt;</a>
     </footer>
 
+    <!-- Image(not used) -->
     <img src="waterfall.jpg" alt="image" id="image" />
 
     <!-- Scripts -->
     <script type="module" src="main.js"></script>
-    <script type="module" src="./functions/fetchImage.js"></script>
-    <script type="module" src="./functions/drawText.js"></script>
-    <script type="module" src="./functions/drawImage.js"></script>
-    <script type="module" src="./functions/wrapText.js"></script>
-    <script type="module" src="./functions/blur.js"></script>
-    <script type="module" src="./functions/resetFilter.js"></script>
-    <script type="module" src="./functions/textWidth.js"></script>
-    <script type="module" src="./functions/multiLineWrap.js"></script>
-    <script type="module" src="./functions/showDownloadPopUp.js"></script>
-    <script type="module" src="./functions/searchInBible.js"></script>
-    <script type="module" src="./functions/searchBook.js"></script>
-    <script src="./functions/download.js"></script>
 
+    <!-- Canvas Scripts -->
+    <script type="module" src="./functions/canvas/fetchImage.js"></script>
+    <script type="module" src="./functions/canvas/drawText.js"></script>
+    <script type="module" src="./functions/canvas/drawImage.js"></script>
+    <script type="module" src="./functions/canvas/wrapText.js"></script>
+    <script type="module" src="./functions/canvas/blur.js"></script>
+    <script type="module" src="./functions/canvas/resetFilter.js"></script>
+    <script type="module" src="./functions/canvas/textWidth.js"></script>
+    <script type="module" src="./functions/canvas/multiLineWrap.js"></script>
+    <script src="./functions/canvas/download.js"></script>
+
+    <!-- App scripts -->
+    <script type="module" src="./functions/app/showDownloadPopUp.js"></script>
+
+    <!-- Bible scripts -->
+    <script type="module" src="./functions/bible/searchInBible.js"></script>
+    <script type="module" src="./functions/bible/searchBook.js"></script>
+    <script type="module" src="./functions/bible/callSearchInBible.js"></script>
+
+    <!-- Content scripts -->
     <script type="module" src="./content/texte.js"></script>
     <script type="module" src="./content/romcor.js"></script>
     <script type="module" src="./content/BibleBooks.js"></script>
