@@ -126,6 +126,11 @@ const texte = [
     text: "„Atunci toţi cei ce se încred în Tine se vor bucura, se vor înveseli totdeauna, căci Tu îi vei ocroti. Tu vei fi bucuria celor ce iubesc Numele Tău.”",
     reference: "Psalmii 5:11",
   },
+  {
+    id: 21,
+    text: "„”",
+    reference: "",
+  },
 ];
 
 export default texte;
