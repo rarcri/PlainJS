@@ -35,7 +35,7 @@ json.then((data) => {
   // let text = texte[7];
   let reference = texte[randomNumber].reference;
   console.log(reference);
-  let text = callSearchInBible(reference);
+  let text = `„${callSearchInBible(reference)}”`;
 
   let img = new Image();
 
