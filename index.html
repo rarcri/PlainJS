@@ -17,6 +17,7 @@
       <button onClick="window.location.reload();" class="button">
         Generează o nouă imagine
       </button>
+      <button class="button" id="chooseBibleVerse">Alege un verset</button>
       <button class="button" id="downloadButton">Descarcă imaginea</button>
     </div>
 
@@ -28,6 +29,13 @@
         ><input type="text" value="imagine" id="downloadName" />
         <button class="button" id="okDownloadButton">ok</button>
       </div>
+    </div>
+
+    <div id="biblePopUp">
+      <label for="BibleBook">Alegeți versetul dorit</label>
+      <select name="" id="BibleBook"></select>
+      <select name="" id="BibleChapter"></select>
+      <select name="" id="BibleVerse"></select>
     </div>
 
     <!-- Canvas -->
@@ -62,6 +70,7 @@
     <script type="module" src="./functions/bible/searchInBible.js"></script>
     <script type="module" src="./functions/bible/searchBook.js"></script>
     <script type="module" src="./functions/bible/callSearchInBible.js"></script>
+    <script type="module" src="./functions/app/BiblePopUp.js"></script>
 
     <!-- Content scripts -->
     <script type="module" src="./content/texte.js"></script>
