@@ -87,9 +87,8 @@ input:focus {
 }
 
 /* Image */
-#image {
+#overlay {
   display: none;
-  filter: blur(20px);
 }
 
 a {

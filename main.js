@@ -18,13 +18,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 // Keyterms to search for on Pixabay
-const searchTerms = [
-  'green+hills',
-  'flower',
-  'landscape+summer',
-  'nature',
-  'bird',
-];
+const searchTerms = ['green+hills', 'flower', 'landscape+summer', 'nature'];
 let json = fetchImage(searchTerms);
 
 // Getting the data from

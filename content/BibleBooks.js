@@ -18,7 +18,7 @@ export const books = [
   'Estera',
   'Iov',
   'Psalmii',
-  'Proverbele',
+  'Proverbe',
   'Eclesiastul',
   'Cântarea cântărilor',
   'Isaia',
