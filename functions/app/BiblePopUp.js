@@ -1,53 +1,70 @@
 import { books } from '../../content/BibleBooks.js';
 import searchBook from '../bible/searchBook.js';
 import { bible } from '../../content/romcor.js';
+import drawCanvas from '../canvas/drawCanvas.js';
 
-let Bible = JSON.parse(bible);
+// Keyterms to search for on Pixabay
+const searchTerms = ['green+hills', 'flower', 'landscape+summer', 'nature'];
 
-let selectBook = document.getElementById('BibleBook');
-let selectChapter = document.getElementById('BibleChapter');
-let selectVerse = document.getElementById('BibleVerse');
+// Getting the Input from select tag
+let text = '';
 
-let bookIndex;
-let chapterIndex;
-let verseIndex;
+const BiblePopUp = () => {
+  let Bible = JSON.parse(bible);
 
-let bookSelection = '<option value="">Alege cartea ...</option>';
-let chapterSelection = '<option value="">Alege capitolul ...</option>';
-let verseSelection = '<option value="">Alege versetul ...</option>';
-books.forEach((book) => {
-  bookSelection += `<option value=${book}>${book}</option>\n`;
-});
+  let selectBook = document.getElementById('BibleBook');
+  let selectChapter = document.getElementById('BibleChapter');
+  let selectVerse = document.getElementById('BibleVerse');
 
-console.log(Bible);
-console.log(searchBook(selectBook.value, books));
+  let bookIndex;
+  let chapterIndex;
+  let verseIndex;
 
-selectBook.innerHTML = bookSelection;
-selectChapter.innerHTML = chapterSelection;
-selectVerse.innerHTML = verseSelection;
+  let bookSelection = '<option value="">Alege cartea ...</option>';
+  let chapterSelection = '<option value="">Alege capitolul ...</option>';
+  let verseSelection = '<option value="">Alege versetul ...</option>';
 
-selectBook.onchange = (e) => {
-  chapterSelection = '';
-  bookIndex = searchBook(e.target.value, books);
-  for (let i = 0; i < Bible.books[bookIndex].chapters.length; i++)
-    chapterSelection += `<option value='${i + 1}'>${i + 1}</option>`;
+  // We wrap each book in option tags and store them in
+  // bookSelection
+  books.forEach((book) => {
+    bookSelection += `<option value='${book}'>${book}</option>\n`;
+  });
+
+  console.log(Bible);
+  console.log(searchBook(selectBook.value, books));
+
+  selectBook.innerHTML = bookSelection;
   selectChapter.innerHTML = chapterSelection;
-};
-
-selectChapter.onchange = (e) => {
-  chapterIndex = e.target.value;
-  verseSelection = '';
-  for (
-    let i = 0;
-    i < Bible.books[bookIndex].chapters[chapterIndex].verses.length;
-    i++
-  )
-    verseSelection += `<option value='${i + 1}'>${i + 1}</option>`;
   selectVerse.innerHTML = verseSelection;
+
+  // Update Chapter Selection
+  selectBook.onchange = (e) => {
+    chapterSelection = '<option value="">Alege capitolul ...</option>';
+    console.log('e.target.value of selectBook: ', e.target.value);
+    bookIndex = searchBook(e.target.value, books);
+    for (let i = 0; i < Bible.books[bookIndex].chapters.length; i++)
+      chapterSelection += `<option value='${i + 1}'>${i + 1}</option>`;
+    selectChapter.innerHTML = chapterSelection;
+  };
+
+  // Update Verse Selection
+  selectChapter.onchange = (e) => {
+    chapterIndex = e.target.value - 1;
+    verseSelection = '<option value="">Alege versetul ...</option>';
+    for (
+      let i = 0;
+      i < Bible.books[bookIndex].chapters[chapterIndex].verses.length;
+      i++
+    )
+      verseSelection += `<option value='${i + 1}'>${i + 1}</option>`;
+    selectVerse.innerHTML = verseSelection;
+  };
+
+  // Here we call draw Canvas
+  selectVerse.onchange = () => {
+    let reference = `${selectBook.value} ${selectChapter.value}:${selectVerse.value}`;
+    drawCanvas(searchTerms, reference);
+  };
 };
 
-selectVerse.onchange = () => {
-  console.log(
-    `${selectBook.value} ${selectChapter.value}:${selectVerse.value}`
-  );
-};
+export default BiblePopUp;

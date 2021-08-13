@@ -15,7 +15,7 @@ const callSearchInBible = (text) => {
   });
 
   // Checking if first thing is not a number
-  if (isNaN(stext[0])) {
+  if (stext.length != 3) {
     book = stext[0];
 
     let sstext = stext[1].split(':');
@@ -29,6 +29,7 @@ const callSearchInBible = (text) => {
     verse = sstext[1];
   }
 
+  // If verse includes ,
   if (verse.includes(',')) {
     let verses = verse.split(',');
     let allverses = [];

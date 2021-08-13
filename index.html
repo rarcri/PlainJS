@@ -11,13 +11,16 @@
   <body>
     <!-- Title -->
     <h3 class="title">rar<span class="blue">photo</span></h3>
+    <div class="center">
+      <label for="customToggle">Verset la alegere ->&nbsp;&nbsp;</label
+      ><input type="checkbox" name="customToggle" id="customToggle" />
+    </div>
 
     <!-- Buttons -->
     <div class="center">
       <button onClick="window.location.reload();" class="button">
         Generează o nouă imagine
       </button>
-      <button class="button" id="chooseBibleVerse">Alege un verset</button>
       <button class="button" id="downloadButton">Descarcă imaginea</button>
     </div>
 
@@ -31,11 +34,26 @@
       </div>
     </div>
 
-    <div id="biblePopUp">
-      <label for="BibleBook">Alegeți versetul dorit</label>
-      <select name="" id="BibleBook"></select>
-      <select name="" id="BibleChapter"></select>
-      <select name="" id="BibleVerse"></select>
+    <div id="BiblePopUp" class="center hidden">
+      <label for="BibleBook">Alege versetul dorit:</label>
+      <select name="BibleBook" id="BibleBook"></select>
+      <select name="BibleBook" id="BibleChapter"></select>
+      <select name="BibleBook" id="BibleVerse"></select>
+    </div>
+
+    <div id="customPopUp" class="center">
+      <!-- Text personalizat -->
+      <label for="customText">text personalizat</label>
+      <textarea
+        name="customText"
+        id="customText"
+        cols="30"
+        rows="10"
+      ></textarea>
+
+      <!-- Referință personalizată -->
+      <label for="customReference">Referintă(opțional)</label>
+      <input type="text" name="customReference" id="customReference" />
     </div>
 
     <!-- Canvas -->
@@ -61,16 +79,18 @@
     <script type="module" src="./functions/canvas/resetFilter.js"></script>
     <script type="module" src="./functions/canvas/textWidth.js"></script>
     <script type="module" src="./functions/canvas/multiLineWrap.js"></script>
+    <script type="module" src="./functions/canvas/drawCanvas.js"></script>
     <script src="./functions/canvas/download.js"></script>
 
     <!-- App scripts -->
     <script type="module" src="./functions/app/showDownloadPopUp.js"></script>
+    <script type="module" src="./functions/app/BiblePopUp.js"></script>
+    <script type="module" src="./functions/app/toggleBiblePopUp.js"></script>
 
     <!-- Bible scripts -->
     <script type="module" src="./functions/bible/searchInBible.js"></script>
     <script type="module" src="./functions/bible/searchBook.js"></script>
     <script type="module" src="./functions/bible/callSearchInBible.js"></script>
-    <script type="module" src="./functions/app/BiblePopUp.js"></script>
 
     <!-- Content scripts -->
     <script type="module" src="./content/texte.js"></script>
