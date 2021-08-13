@@ -3,7 +3,7 @@ const searchBook = (book, books) => {
   for (i = 0; i < books.length; i++) {
     if (books[i] === book) return i;
   }
-  if (books[i] === books.legth - 1)
+  if (books[i] === books.length - 1)
     console.log(`Book ${book} does not exist in Bible.`);
 };
 

@@ -26,41 +26,13 @@ body {
   font-size: 50px;
 }
 
-#controls {
-  border: white 2px solid;
-  border-radius: 14px;
-  width: 50%;
-  margin: auto;
-  padding: 50px;
-}
-
-input:focus {
-  border: none;
-  border-radius: 2pt;
-  box-shadow: 0 0 0 2pt rgb(0, 100, 200);
-  outline: none;
-}
-
-#downloadName {
-  border: none;
-  border-radius: 7px;
-  font-size: 20px;
-  width: 20%;
-  height: 25px;
-  margin: 20px 10px;
-}
-
-#downloadPopUp {
-  display: none;
-}
-
 .button {
   cursor: pointer;
   display: block;
   color: white;
   font-size: 19px;
   padding: 0.5rem 2rem;
-  margin: 0 1rem 0.5rem 1rem;
+  margin: 0.2rem 1rem 0.5rem 1rem;
   background-color: rgb(0, 100, 200);
   border-radius: 8px;
   border: none;
@@ -70,11 +42,46 @@ input:focus {
   background-color: rgb(0, 41, 82);
 }
 
+.hidden {
+  display: none;
+}
+
+#controls {
+  border: white 2px solid;
+  border-radius: 14px;
+  width: 50%;
+  margin: auto;
+  padding: 50px;
+}
+#downloadName {
+  border: none;
+  border-radius: 7px;
+  font-size: 20px;
+  width: 20%;
+  height: 25px;
+  margin: 20px 10px;
+}
+
+#downloadName:focus {
+  border: none;
+  border-radius: 2pt;
+  box-shadow: 0 0 0 2pt rgb(0, 100, 200);
+  outline: none;
+}
+
+#downloadPopUp {
+  display: none;
+}
+
+#customPopUp {
+  display: none;
+}
+
 #canvas {
   width: 90%;
   max-width: 800px;
   /* Display */
-  margin: auto;
+  margin: 0.2rem auto;
   display: block;
   /* Border */
   border: rgb(0, 100, 200) 2px solid;
@@ -102,6 +109,12 @@ a:hover {
 
 footer {
   padding: 1rem;
+}
+
+/* Select */
+
+select {
+  margin: 0.1rem 0.5rem;
 }
 
 @media only screen and (max-width: 600px) {
