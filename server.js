@@ -19,7 +19,6 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 app.use(express.static(__dirname));
-app.use("/uploads", express.static("uploads"));
 
 app.post("/single", upload.single("profile-file"), function (req, res, next) {
   console.log(JSON.stringify(req.file));
