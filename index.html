@@ -6,39 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="#" />
+    <script
+      src="https://kit.fontawesome.com/f71019f612.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <title>rarphoto</title>
   </head>
-  <body>
+  <body class="bg-dark text-white">
     <!-- Title -->
-    <h3 class="title">rar<span class="blue">photo</span></h3>
-    <div class="center">
-      <label for="customToggle">Verset la alegere ->&nbsp;&nbsp;</label
-      ><input type="checkbox" name="customToggle" id="customToggle" />
+    <h3 class="d-flex justify-content-center text-white">
+      rar<span class="blue">photo</span>
+    </h3>
+    <div class="d-flex justify-content-center text-white">
+      <label for="customToggle"
+        >Verset la alegere <i class="fas fa-arrow-right"></i>&nbsp;&nbsp;</label
+      ><input
+        class="form-check-input"
+        type="checkbox"
+        name="customToggle"
+        id="customToggle"
+      />
     </div>
 
     <!-- Buttons -->
     <div class="center">
-      <button onClick="window.location.reload();" class="button">
+      <button onClick="window.location.reload();" class="btn btn-primary m-1">
         Generează o nouă imagine
       </button>
-      <button class="button" id="downloadButton">Descarcă imaginea</button>
+      <button class="btn btn-primary" id="downloadButton">
+        Descarcă imaginea
+      </button>
     </div>
 
     <!-- Download PopUp -->
-    <div id="downloadPopUp">
+    <div class="container" id="downloadPopUp">
       <h3 class="text-center">Cu ce nume doriți să descărcați imaginea?</h3>
       <div class="center">
-        <span>editează textul -&gt;</span
+        <span>editează textul <i class="fas fa-arrow-right"></i></span
         ><input type="text" value="imagine" id="downloadName" />
-        <button class="button" id="okDownloadButton">ok</button>
+        <button class="btn btn-primary" id="okDownloadButton">ok</button>
       </div>
     </div>
 
-    <div id="BiblePopUp" class="center hidden">
-      <label for="BibleBook">Alege versetul dorit:</label>
-      <select name="BibleBook" id="BibleBook"></select>
-      <select name="BibleBook" id="BibleChapter"></select>
-      <select name="BibleBook" id="BibleVerse"></select>
+    <div id="BiblePopUp" class="container w-75 hidden">
+      <div class="row">
+        <label for="BibleBook">Alege versetul dorit:</label>
+        <select class="col-sm mx-1" name="BibleBook" id="BibleBook"></select>
+        <select class="col-sm mx-1" name="BibleBook" id="BibleChapter"></select>
+        <select class="col-sm mx-1" name="BibleBook" id="BibleVerse"></select>
+      </div>
     </div>
 
     <div id="customPopUp" class="center">
@@ -61,7 +83,9 @@
 
     <!-- Footer -->
     <footer class="center">
-      <a href="https://github.com/rarcri/PlainJS">&lt; github /&gt;</a>
+      <a class="link-light" href="https://github.com/rarcri/PlainJS"
+        >&lt; github /&gt;</a
+      >
     </footer>
 
     <!-- Overlay image -->
@@ -86,6 +110,7 @@
     <script type="module" src="./functions/app/showDownloadPopUp.js"></script>
     <script type="module" src="./functions/app/BiblePopUp.js"></script>
     <script type="module" src="./functions/app/toggleBiblePopUp.js"></script>
+    <script type="module" src="./functions/app/saveOnServer.js"></script>
 
     <!-- Bible scripts -->
     <script type="module" src="./functions/bible/searchInBible.js"></script>
