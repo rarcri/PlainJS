@@ -11,7 +11,7 @@ function saveOnServer() {
     .then((blob) => {
       let postData = new FormData();
       postData.append("profile-file", blob);
-      fetch("http://localhost:3000/single", {
+      fetch(`http://localhost:${process.env.PORT || 3000}/single`, {
         method: "POST",
         headers: {
           // "Content-type": "multipart/formdata",
