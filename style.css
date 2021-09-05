@@ -69,14 +69,6 @@ body {
   outline: none;
 }
 
-#downloadPopUp {
-  display: none;
-}
-
-#customPopUp {
-  display: none;
-}
-
 #canvas {
   width: 90%;
   max-width: 800px;

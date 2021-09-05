@@ -36,7 +36,7 @@
 
     <!-- Buttons -->
     <div class="center">
-      <button onClick="window.location.reload();" class="btn btn-primary m-1">
+      <button id="getNew" class="btn btn-primary m-1">
         Generează o nouă imagine
       </button>
       <button class="btn btn-primary" id="downloadButton">
@@ -45,7 +45,7 @@
     </div>
 
     <!-- Download PopUp -->
-    <div class="container" id="downloadPopUp">
+    <div class="container d-none" id="downloadPopUp">
       <h3 class="text-center">Cu ce nume doriți să descărcați imaginea?</h3>
       <div class="d-flex align-items-center flex-column">
         <p>editează textul <i class="fas fa-arrow-down"></i></p>
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div id="customPopUp" class="center">
+    <div id="customPopUp" class="d-none">
       <!-- Text personalizat -->
       <label for="customText">text personalizat</label>
       <textarea
@@ -111,6 +111,7 @@
     <script type="module" src="./functions/app/BiblePopUp.js"></script>
     <script type="module" src="./functions/app/toggleBiblePopUp.js"></script>
     <script type="module" src="./functions/app/saveOnServer.js"></script>
+    <script type="module" src="./functions/app/getNew.js"></script>
 
     <!-- Bible scripts -->
     <script type="module" src="./functions/bible/searchInBible.js"></script>
