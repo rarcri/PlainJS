@@ -1,7 +1,7 @@
 var express = require("express");
 var multer = require("multer");
 var cors = require("cors");
-var port = 3000 || process.env.PORT;
+var port = process.env.PORT || 3000;
 
 var app = express();
 
