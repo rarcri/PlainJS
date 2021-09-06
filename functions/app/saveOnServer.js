@@ -11,7 +11,7 @@ function saveOnServer() {
     .then((blob) => {
       let postData = new FormData();
       postData.append("profile-file", blob);
-      fetch(`https://rarphoto.herokuapp.com/single`, {
+      fetch(`http://rarphoto.herokuapp.com/single`, {
         method: "POST",
         headers: {
           // "Content-type": "multipart/formdata",

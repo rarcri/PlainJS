@@ -20,6 +20,13 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <meta property="og:title" content="rarphoto" />
+    <meta property="og:description" content="site de creat imagini" />
+    <meta
+      property="og:image"
+      content="http://rarphoto.herokuapp.com/image.png"
+    />
+
     <title>rarphoto</title>
   </head>
   <body class="bg-dark text-white">
@@ -53,7 +60,12 @@
       <h3 class="text-center">Cu ce nume doriți să descărcați imaginea?</h3>
       <div class="d-flex align-items-center flex-column">
         <p>editează textul <i class="fas fa-arrow-down"></i></p>
-        <input type="text" value="imagine" id="downloadName" />
+        <input
+          type="text"
+          value="imagine"
+          id="downloadName"
+          class="text-black"
+        />
         <button class="btn btn-primary" id="okDownloadButton">ok</button>
       </div>
     </div>
@@ -61,9 +73,21 @@
     <div id="BiblePopUp" class="container w-50 d-none">
       <div class="row">
         <label for="BibleBook">Alege versetul dorit:</label>
-        <select class="col-sm mx-1" name="BibleBook" id="BibleBook"></select>
-        <select class="col-sm mx-1" name="BibleBook" id="BibleChapter"></select>
-        <select class="col-sm mx-1" name="BibleBook" id="BibleVerse"></select>
+        <select
+          class="text-black col-sm mx-1"
+          name="BibleBook"
+          id="BibleBook"
+        ></select>
+        <select
+          class="text-black col-sm mx-1"
+          name="BibleBook"
+          id="BibleChapter"
+        ></select>
+        <select
+          class="col-sm mx-1 text-black"
+          name="BibleBook"
+          id="BibleVerse"
+        ></select>
       </div>
     </div>
 
@@ -95,10 +119,18 @@
         <a
           class="relative text-5xl left-1/4 top-1/4"
           href="#"
+          target="_blank"
           id="facebookButton"
           ><i class="fa fa-facebook"></i
         ></a>
       </div>
+
+      <!-- Facebook Login Button -->
+      <fb:login-button
+        scope="public_profile,email"
+        onlogin="checkLoginState();"
+      >
+      </fb:login-button>
     </footer>
 
     <!-- Overlay image -->
@@ -136,5 +168,32 @@
     <script type="module" src="./content/texte.js"></script>
     <script type="module" src="./content/romcor.js"></script>
     <script type="module" src="./content/BibleBooks.js"></script>
+
+    <!-- Facebook Init -->
+
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: "253780839740590",
+          cookie: true,
+          xfbml: true,
+          version: "v11.0",
+        });
+
+        FB.AppEvents.logPageView();
+      };
+
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
   </body>
 </html>
