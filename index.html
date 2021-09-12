@@ -6,54 +6,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="#" />
+    <script
+      src="https://kit.fontawesome.com/f71019f612.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <title>rarphoto</title>
   </head>
-  <body>
+  <body class="bg-dark text-white">
     <!-- Title -->
-    <h3 class="title">rar<span class="blue">photo</span></h3>
-    <div class="center">
-      <label for="customToggle">Verset la alegere ->&nbsp;&nbsp;</label
-      ><input type="checkbox" name="customToggle" id="customToggle" />
+    <h3 class="d-flex justify-content-center text-white">
+      rar<span class="blue">photo</span>
+    </h3>
+    <div class="flex flex-col items-center text-white">
+      <div>
+        <!-- Verset la alegere -->
+        <label for="choice"
+          >Verset la alegere
+          <i class="fas fa-arrow-right"></i>&nbsp;&nbsp;</label
+        ><input class="form-check-input" type="checkbox" name="" id="choice" />
+      </div>
+
+      <div>
+        <!-- Text Personalizat -->
+        <label for="customToggle"
+          >Text personalizat<i class="fas fa-arrow-right"></i
+          >&nbsp;&nbsp;</label
+        ><input
+          class="form-check-input"
+          type="checkbox"
+          name="customToggle"
+          id="customToggle"
+        />
+      </div>
     </div>
 
     <!-- Buttons -->
     <div class="center">
-      <button onClick="window.location.reload();" class="button">
+      <button id="getNew" class="btn btn-primary m-1">
         Generează o nouă imagine
       </button>
-      <button class="button" id="downloadButton">Descarcă imaginea</button>
+      <button class="btn btn-primary" id="downloadButton">
+        Descarcă imaginea
+      </button>
     </div>
 
     <!-- Download PopUp -->
-    <div id="downloadPopUp">
+    <div class="container d-none" id="downloadPopUp">
       <h3 class="text-center">Cu ce nume doriți să descărcați imaginea?</h3>
-      <div class="center">
-        <span>editează textul -&gt;</span
-        ><input type="text" value="imagine" id="downloadName" />
-        <button class="button" id="okDownloadButton">ok</button>
+      <div class="d-flex align-items-center flex-column">
+        <p>editează textul <i class="fas fa-arrow-down"></i></p>
+        <input
+          class="text-black"
+          type="text"
+          value="imagine"
+          id="downloadName"
+        />
+        <button class="btn btn-primary" id="okDownloadButton">ok</button>
       </div>
     </div>
 
-    <div id="BiblePopUp" class="center hidden">
-      <label for="BibleBook">Alege versetul dorit:</label>
-      <select name="BibleBook" id="BibleBook"></select>
-      <select name="BibleBook" id="BibleChapter"></select>
-      <select name="BibleBook" id="BibleVerse"></select>
+    <div id="BiblePopUp" class="container w-50 d-none">
+      <div class="row">
+        <label for="BibleBook">Alege versetul dorit:</label>
+        <select
+          class="col-sm mx-1 text-black"
+          name="BibleBook"
+          id="BibleBook"
+        ></select>
+        <select
+          class="col-sm mx-1 text-black"
+          name="BibleBook"
+          id="BibleChapter"
+        ></select>
+        <select
+          class="col-sm mx-1 text-black"
+          name="BibleBook"
+          id="BibleVerse"
+        ></select>
+      </div>
     </div>
 
-    <div id="customPopUp" class="center">
-      <!-- Text personalizat -->
-      <label for="customText">text personalizat</label>
-      <textarea
-        name="customText"
-        id="customText"
-        cols="30"
-        rows="10"
-      ></textarea>
+    <div id="customPopUp" class="hidden top-0 w-full h-full fixed bg-gray-800">
+      <i
+        class="fas fa-times text-3xl text-red-500 hover:text-red-700 ml-10 mt-5"
+        id="xSignCustom"
+      ></i>
+      <div class="flex flex-col items-center justify-center">
+        <!-- Text personalizat -->
+        <label for="customText" class="mt-10">text personalizat</label>
+        <textarea
+          class="text-black"
+          name="customText"
+          id="customText"
+          cols="30"
+          rows="5"
+        ></textarea>
 
-      <!-- Referință personalizată -->
-      <label for="customReference">Referintă(opțional)</label>
-      <input type="text" name="customReference" id="customReference" />
+        <!-- Referință personalizată -->
+        <label for="customReference">Referintă(opțional)</label>
+        <input
+          class="text-black"
+          type="text"
+          name="customReference"
+          id="customReference"
+        />
+        <button
+          id="generateCustom"
+          class="bg-blue-600 hover:bg-blue-800 rounded px-1 py-2 mt-2"
+        >
+          Generează imaginea
+        </button>
+      </div>
     </div>
 
     <!-- Canvas -->
@@ -61,14 +134,36 @@
 
     <!-- Footer -->
     <footer class="center">
-      <a href="https://github.com/rarcri/PlainJS">&lt; github /&gt;</a>
+      <a class="link-light" href="https://github.com/rarcri/PlainJS"
+        >&lt; github /&gt;</a
+      >
+      <!-- Share Button -->
+      <div
+        class="hidden rounded-full bg-light w-20 h-20 fixed bottom-20 right-20"
+      >
+        <a
+          class="relative text-5xl left-1/4 top-1/4"
+          href="#"
+          id="facebookButton"
+          ><i class="fa fa-facebook"></i
+        ></a>
+      </div>
+
+      <!-- <fb:login-button
+        scope="public_profile,email"
+        onlogin="checkLoginState();"
+      >
+      </fb:login-button> -->
     </footer>
+    <div id="status"></div>
 
     <!-- Overlay image -->
     <img src="overlay.png" alt="image" id="overlay" />
 
     <!-- Scripts -->
     <script type="module" src="main.js"></script>
+
+    <script type="module" src="./functions/app/shareToFacebook.js"></script>
 
     <!-- Canvas Scripts -->
     <script type="module" src="./functions/canvas/fetchImage.js"></script>
@@ -86,6 +181,9 @@
     <script type="module" src="./functions/app/showDownloadPopUp.js"></script>
     <script type="module" src="./functions/app/BiblePopUp.js"></script>
     <script type="module" src="./functions/app/toggleBiblePopUp.js"></script>
+    <script type="module" src="./functions/app/saveOnServer.js"></script>
+    <script type="module" src="./functions/app/getNew.js"></script>
+    <script type="module" src="./functions/app/custom.js"></script>
 
     <!-- Bible scripts -->
     <script type="module" src="./functions/bible/searchInBible.js"></script>
@@ -96,5 +194,11 @@
     <script type="module" src="./content/texte.js"></script>
     <script type="module" src="./content/romcor.js"></script>
     <script type="module" src="./content/BibleBooks.js"></script>
+    <!-- <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js"
+    ></script> -->
   </body>
 </html>

@@ -4,11 +4,13 @@ rarphoto este un site care generează astfel de imagini:
 
 Poate fi găsit la linkul: https://rarcri.github.io/PlainJS/
 
-## Nou ##
-7 August 2021 - am făcut să arate bine pe mobil
 
 
 
 ### TODO ###
-- [x] Add naming on download
 - [ ] Add Keywords
+- [ ] Desparte imaginile in mai multe pentru story
+- [ ] Add layouts
+- [x] Add custom text
+- [ ] Add Share to - Facebook(Post + story), whatsapp, instagram, telegram,
+- [ ] Add Programare postare pe Facebook(Pagini + profil privat)

@@ -59,7 +59,7 @@ body {
   font-size: 20px;
   width: 20%;
   height: 25px;
-  margin: 20px 10px;
+  margin: 10px 10px;
 }
 
 #downloadName:focus {
@@ -67,14 +67,6 @@ body {
   border-radius: 2pt;
   box-shadow: 0 0 0 2pt rgb(0, 100, 200);
   outline: none;
-}
-
-#downloadPopUp {
-  display: none;
-}
-
-#customPopUp {
-  display: none;
 }
 
 #canvas {
