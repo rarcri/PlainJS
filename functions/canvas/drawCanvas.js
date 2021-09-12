@@ -15,7 +15,12 @@ const canvas = document.getElementById("canvas");
 
 // Get contexts
 const ctx = canvas.getContext("2d");
-const drawCanvas = (searchTerms, BibleVerse = "") => {
+const drawCanvas = (
+  searchTerms,
+  userReference = "",
+  userText = "",
+  customText = false
+) => {
   //Canvas Imports
   let json = fetchImage(searchTerms);
 
@@ -29,12 +34,18 @@ const drawCanvas = (searchTerms, BibleVerse = "") => {
     // Getting a random Number
     let randomNumber = Math.floor(Math.random() * nrTexteBiblice);
 
+    let reference = "";
     // Getting the reference from texts object
-    let reference =
-      BibleVerse != "" ? BibleVerse : texte[randomNumber].reference;
-    console.log(reference);
-    let text = `„${callSearchInBible(reference)}”`;
+    if (!customText) {
+      reference =
+        userReference != "" ? userReference : texte[randomNumber].reference;
+      console.log(reference);
+    } else reference = userReference;
 
+    // Setting the text
+    let text = "";
+    if (!customText) text = `„${callSearchInBible(reference)}”`;
+    else text = userText;
     // Creating a new image to draw on canvas
     let img = new Image();
 

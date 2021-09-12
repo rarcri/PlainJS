@@ -1,4 +1,4 @@
-let toggle = document.querySelector("#customToggle");
+let toggle = document.querySelector("#choice");
 let BiblePopUp = document.querySelector("#BiblePopUp");
 
 toggle.addEventListener("change", () => {
