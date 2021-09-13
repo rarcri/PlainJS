@@ -158,7 +158,7 @@ const texte = [
   { reference: "Matei 18:3" },
   { reference: "Apocalipsa 3:20" },
   { reference: "1 Ioan 1:9" },
-  { reference: "Romani 10:9,10,11,13" },
+  { reference: "Romani 10:9" },
   { reference: "Efeseni 2:8,9" },
   { reference: "Tit 3:5" },
   { reference: "Faptele Apostolilor 16:31" },
