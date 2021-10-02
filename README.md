@@ -16,4 +16,4 @@ Poate fi găsit la linkul: https://rarcri.github.io/PlainJS/
 - [ ] Add Share to - Facebook(Post + story), whatsapp, instagram, telegram,
 - [ ] Add Programare postare pe Facebook(Pagini + profil privat)
 - [ ] Add more fonts
-- [ ] Add changeImage button
+- [x] Add changeImage button
