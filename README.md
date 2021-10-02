@@ -12,5 +12,8 @@ Poate fi găsit la linkul: https://rarcri.github.io/PlainJS/
 - [ ] Desparte imaginile in mai multe pentru story
 - [ ] Add layouts
 - [x] Add custom text
+- [ ] Fix Toggles
 - [ ] Add Share to - Facebook(Post + story), whatsapp, instagram, telegram,
 - [ ] Add Programare postare pe Facebook(Pagini + profil privat)
+- [ ] Add more fonts
+- [x] Add changeImage button

@@ -53,9 +53,12 @@
     <!-- Buttons -->
     <div class="center">
       <button id="getNew" class="btn btn-primary m-1">
-        Generează o nouă imagine
+        Generează o nouă imagine + text
       </button>
-      <button class="btn btn-primary" id="downloadButton">
+      <button class="btn btn-primary m-1" id="changeImageButton">
+        Schimbă imaginea
+      </button>
+      <button class="btn btn-primary m-1" id="downloadButton">
         Descarcă imaginea
       </button>
     </div>
@@ -79,18 +82,18 @@
       <div class="row">
         <label for="BibleBook">Alege versetul dorit:</label>
         <select
-          class="col-sm mx-1 text-black"
+          class="col-sm m-1 text-black"
           name="BibleBook"
           id="BibleBook"
         ></select>
         <select
-          class="col-sm mx-1 text-black"
-          name="BibleBook"
+          class="col-sm m-1 text-black"
+          name="BibleChapter"
           id="BibleChapter"
         ></select>
         <select
-          class="col-sm mx-1 text-black"
-          name="BibleBook"
+          class="col-sm m-1 text-black"
+          name="BibleVerse"
           id="BibleVerse"
         ></select>
       </div>
@@ -184,6 +187,7 @@
     <script type="module" src="./functions/app/saveOnServer.js"></script>
     <script type="module" src="./functions/app/getNew.js"></script>
     <script type="module" src="./functions/app/custom.js"></script>
+    <script type="module" src="./functions/app/changeImage.js"></script>
 
     <!-- Bible scripts -->
     <script type="module" src="./functions/bible/searchInBible.js"></script>
