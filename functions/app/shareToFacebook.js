@@ -1,11 +1,8 @@
 import saveOnServer from "./saveOnServer.js";
 
 let facebookButton = document.querySelector("#facebookButton");
-
 function statusChangeCallback(response) {
-  // Called with the results from FB.getLoginStatus().
-  console.log("statusChangeCallback");
-  console.log(response); // The current login status of the person.
+  // Called with the results from FB.getLoginStatus().  console.log("statusChangeCallback"); console.log(response); // The current login status of the person.
   if (response.status === "connected") {
     // Logged into your webpage and Facebook.
     testAPI();
