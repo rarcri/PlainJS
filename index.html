@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="#" />
+    <link rel="icon" href="./rarphoto-logo.png" />
     <script
       src="https://kit.fontawesome.com/f71019f612.js"
       crossorigin="anonymous"
@@ -27,13 +27,58 @@
     <h3 class="d-flex justify-content-center text-white">
       rar<span class="blue">photo</span>
     </h3>
+
+    <!-- Settings icon -->
+    <i
+      class="
+        fa fa-cog
+        inline
+        text-4xl
+        fixed
+        right-2
+        hover:bg-blue-800
+        p-1
+        rounded-full
+        cursor-pointer
+      "
+      id="settings-cog"
+    ></i>
+    <div
+      class="d-none fixed top-0 left-0 w-full h-full bg-gray-800"
+      id="settings"
+    >
+      <div class="flex justify-center mt-5">
+        <h4>Alege fontul:</h4>
+        <select class="text-black" name="font" id="selectFont"></select>
+      </div>
+      <div class="flex justify-center mt-5">
+        <button
+          class="btn btn-danger object-center m-2"
+          id="cancelSettingsButton"
+        >
+          Anulează
+        </button>
+        <button
+          class="btn btn-primary object-center m-2"
+          id="saveSettingsButton"
+        >
+          Salvează
+        </button>
+      </div>
+    </div>
+
     <div class="flex flex-col items-center text-white">
       <div>
         <!-- Verset la alegere -->
         <label for="choice"
           >Verset la alegere
           <i class="fas fa-arrow-right"></i>&nbsp;&nbsp;</label
-        ><input class="form-check-input" type="checkbox" name="" id="choice" />
+        ><input
+          class="form-check-input cursor-pointer"
+          type="checkbox"
+          name="choice"
+          id="choice"
+        />
       </div>
 
       <div>
@@ -42,7 +87,7 @@
           >Text personalizat<i class="fas fa-arrow-right"></i
           >&nbsp;&nbsp;</label
         ><input
-          class="form-check-input"
+          class="form-check-input cursor-pointer"
           type="checkbox"
           name="customToggle"
           id="customToggle"
@@ -69,12 +114,12 @@
       <div class="d-flex align-items-center flex-column">
         <p>editează textul <i class="fas fa-arrow-down"></i></p>
         <input
-          class="text-black"
+          class="text-black form-control m-2"
           type="text"
           value="imagine"
           id="downloadName"
         />
-        <button class="btn btn-primary" id="okDownloadButton">ok</button>
+        <button class="btn btn-primary" id="okDownloadButton">Descarcă</button>
       </div>
     </div>
 
@@ -101,7 +146,15 @@
 
     <div id="customPopUp" class="hidden top-0 w-full h-full fixed bg-gray-800">
       <i
-        class="fas fa-times text-3xl text-red-500 hover:text-red-700 ml-10 mt-5"
+        class="
+          fas
+          fa-times
+          text-3xl text-red-500
+          hover:text-red-700
+          ml-10
+          mt-5
+          cursor-pointer
+        "
         id="xSignCustom"
       ></i>
       <div class="flex flex-col items-center justify-center">
@@ -137,7 +190,9 @@
 
     <!-- Footer -->
     <footer class="center">
-      <a class="link-light" href="https://github.com/rarcri/PlainJS"
+      <a
+        class="text-light hover:link-blue-800"
+        href="https://github.com/rarcri/PlainJS"
         >&lt; github /&gt;</a
       >
       <!-- Share Button -->
@@ -181,13 +236,18 @@
     <script src="./functions/canvas/download.js"></script>
 
     <!-- App scripts -->
-    <script type="module" src="./functions/app/showDownloadPopUp.js"></script>
+    <script type="module" src="./functions/app/toggleDownloadPopUp.js"></script>
     <script type="module" src="./functions/app/BiblePopUp.js"></script>
     <script type="module" src="./functions/app/toggleBiblePopUp.js"></script>
     <script type="module" src="./functions/app/saveOnServer.js"></script>
     <script type="module" src="./functions/app/getNew.js"></script>
     <script type="module" src="./functions/app/custom.js"></script>
     <script type="module" src="./functions/app/changeImage.js"></script>
+
+    <!-- Settings scripts -->
+    <script type="module" src="./functions/settings/selectFont.js"></script>
+    <script type="module" src="./functions/settings/saveSettings.js"></script>
+    <script type="module" src="./functions/settings/toggleSettings.js"></script>
 
     <!-- Bible scripts -->
     <script type="module" src="./functions/bible/searchInBible.js"></script>
@@ -198,6 +258,7 @@
     <script type="module" src="./content/texte.js"></script>
     <script type="module" src="./content/romcor.js"></script>
     <script type="module" src="./content/BibleBooks.js"></script>
+    <script type="module" src="./content/fonts.js"></script>
     <!-- <script
       async
       defer
