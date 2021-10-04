@@ -1,5 +1,10 @@
 import { searchTerms } from "../../main.js";
-import drawCanvas from "../canvas/drawCanvas.js";
+import drawCanvas, { imageURL } from "../canvas/drawCanvas.js";
+import { currentFont as fontFamily } from "../settings/selectFont.js";
+
+// Toggles
+import toggleBiblePopUp from "./toggleBiblePopUp.js";
+import toggleDownloadPopUp from "./toggleDownloadPopUp.js";
 
 let xSignCustom = document.getElementById("xSignCustom");
 let customPopUp = document.getElementById("customPopUp");
@@ -17,11 +22,22 @@ xSignCustom.addEventListener("click", () => {
 // Handle input type box click event
 customToggle.addEventListener("click", () => {
   customPopUp.classList.remove("hidden");
+  toggleBiblePopUp(true);
+  toggleDownloadPopUp(true);
+  console.log("toggled off both");
 });
 
 // Handle click on Generate Custom button
 generateCustom.addEventListener("click", () => {
-  drawCanvas(searchTerms, customReference.value, customText.value, true);
+  drawCanvas(
+    searchTerms,
+    fontFamily,
+    customReference.value,
+    customText.value,
+    true,
+    imageURL,
+    true
+  );
   customPopUp.classList.add("hidden");
   customToggle.checked = false;
 });

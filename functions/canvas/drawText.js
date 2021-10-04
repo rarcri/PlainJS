@@ -6,8 +6,10 @@ function drawText(
   text,
   fillColor = "white",
   strokeColor = "black",
+  strokeWidth = 4,
   yMain = 0,
   fontSize = 50,
+  //cursive, sans-serif, serif, monospace, Akronim-Regular, Arvo-Regular, PTSansNarrow-Regular
   fontFamily = "serif"
 ) {
   let font = `${fontSize}px ${fontFamily}`;
@@ -16,7 +18,7 @@ function drawText(
 
   // Add text
   ctx.font = font;
-  ctx.lineWidth = 6;
+  ctx.lineWidth = strokeWidth;
   ctx.fillStyle = fillColor;
 
   ctx.strokeStyle = strokeColor;

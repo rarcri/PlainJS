@@ -1,20 +1,21 @@
-import { books } from '../../content/BibleBooks.js';
-import searchBook from '../bible/searchBook.js';
-import { bible } from '../../content/romcor.js';
-import drawCanvas from '../canvas/drawCanvas.js';
+import { books } from "../../content/BibleBooks.js";
+import searchBook from "../bible/searchBook.js";
+import { bible } from "../../content/romcor.js";
+import drawCanvas, { imageURL } from "../canvas/drawCanvas.js";
+import { currentFont as fontFamily } from "../settings/selectFont.js";
 
 // Keyterms to search for on Pixabay
-const searchTerms = ['green+hills', 'flower', 'landscape+summer', 'nature'];
+const searchTerms = ["green+hills", "flower", "landscape+summer", "nature"];
 
 // Getting the Input from select tag
-let text = '';
+let text = "";
 
 const BiblePopUp = () => {
   let Bible = JSON.parse(bible);
 
-  let selectBook = document.getElementById('BibleBook');
-  let selectChapter = document.getElementById('BibleChapter');
-  let selectVerse = document.getElementById('BibleVerse');
+  let selectBook = document.getElementById("BibleBook");
+  let selectChapter = document.getElementById("BibleChapter");
+  let selectVerse = document.getElementById("BibleVerse");
 
   let bookIndex;
   let chapterIndex;
@@ -40,7 +41,7 @@ const BiblePopUp = () => {
   // Update Chapter Selection
   selectBook.onchange = (e) => {
     chapterSelection = '<option value="">Alege capitolul ...</option>';
-    console.log('e.target.value of selectBook: ', e.target.value);
+    console.log("e.target.value of selectBook: ", e.target.value);
     bookIndex = searchBook(e.target.value, books);
     for (let i = 0; i < Bible.books[bookIndex].chapters.length; i++)
       chapterSelection += `<option value='${i + 1}'>${i + 1}</option>`;
@@ -63,7 +64,7 @@ const BiblePopUp = () => {
   // Here we call draw Canvas
   selectVerse.onchange = () => {
     let reference = `${selectBook.value} ${selectChapter.value}:${selectVerse.value}`;
-    drawCanvas(searchTerms, reference);
+    drawCanvas(searchTerms, fontFamily, reference, "", false, imageURL, true);
   };
 };
 
