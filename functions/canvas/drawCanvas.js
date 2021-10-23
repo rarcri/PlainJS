@@ -27,7 +27,8 @@ const drawCanvas = (
   userText = "",
   customText = false,
   customImageURL = "",
-  customImage = false
+  customImage = false,
+  imageAspectRatio = "none"
 ) => {
   //Canvas Imports
   let json = fetchImage(searchTerms);
@@ -69,19 +70,19 @@ const drawCanvas = (
     // Image on load
     img.onload = () => {
       // Draw the Image
-      drawImage(canvas, img);
+      drawImage(canvas, img, imageAspectRatio);
 
       // Unblur Image
       resetFilter(ctx);
 
       // Draw the text
-      let y = drawText(canvas, text, "white", "black", 4, 0, 75, fontFamily);
+      let y = drawText(canvas, text, "white", "black", 4, 0, 70, fontFamily);
 
       // Add 20px to the y
       y += 20;
 
       // Draw the reference text
-      drawText(canvas, reference, "red", "white", 4, y, 75, fontFamily);
+      drawText(canvas, reference, "red", "white", 4, y, 70, fontFamily);
     };
   }); // End of Promise
 };

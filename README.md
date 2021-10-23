@@ -17,3 +17,4 @@ Poate fi găsit la linkul: https://rarcri.github.io/PlainJS/
 - [ ] Add Programare postare pe Facebook(Pagini + profil privat)
 - [ ] Add more fonts
 - [x] Add changeImage button
+- [ ] Reset setting button

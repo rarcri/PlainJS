@@ -1,6 +1,7 @@
 import { searchTerms } from "../../main.js";
 import drawCanvas, { imageURL } from "../canvas/drawCanvas.js";
 import { currentFont as fontFamily } from "../settings/selectFont.js";
+import { currentAspectRatio } from "../settings/selectAspectRatio.js";
 
 // Toggles
 import toggleBiblePopUp from "./toggleBiblePopUp.js";
@@ -36,7 +37,8 @@ generateCustom.addEventListener("click", () => {
     customText.value,
     true,
     imageURL,
-    true
+    true,
+    currentAspectRatio
   );
   customPopUp.classList.add("hidden");
   customToggle.checked = false;
