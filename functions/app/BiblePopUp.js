@@ -3,6 +3,7 @@ import searchBook from "../bible/searchBook.js";
 import { bible } from "../../content/romcor.js";
 import drawCanvas, { imageURL } from "../canvas/drawCanvas.js";
 import { currentFont as fontFamily } from "../settings/selectFont.js";
+import { currentAspectRatio } from "../settings/selectAspectRatio.js";
 
 // Keyterms to search for on Pixabay
 const searchTerms = ["green+hills", "flower", "landscape+summer", "nature"];
@@ -64,7 +65,16 @@ const BiblePopUp = () => {
   // Here we call draw Canvas
   selectVerse.onchange = () => {
     let reference = `${selectBook.value} ${selectChapter.value}:${selectVerse.value}`;
-    drawCanvas(searchTerms, fontFamily, reference, "", false, imageURL, true);
+    drawCanvas(
+      searchTerms,
+      fontFamily,
+      reference,
+      "",
+      false,
+      imageURL,
+      true,
+      currentAspectRatio
+    );
   };
 };
 

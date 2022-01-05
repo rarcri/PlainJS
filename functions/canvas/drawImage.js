@@ -1,14 +1,16 @@
+import setAspectRatio from "./setAspectRatio.js";
 const overlay = document.getElementById("overlay");
 
-const drawImage = (canvas, img) => {
+const drawImage = (canvas, img, aspectRatio = "none") => {
   // Get the context
   let ctx = canvas.getContext("2d");
-  //Set img Width
   let imgWidth = img.width;
   let imgHeight = img.height;
+  let vertical = false;
 
-  canvas.width = img.width;
-  canvas.height = img.height;
+  // set aspect ratio
+  setAspectRatio(img, canvas, aspectRatio);
+
   ctx.filter = "blur(2px)";
 
   ctx.drawImage(img, 0, 0);
