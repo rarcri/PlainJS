@@ -92,16 +92,39 @@ body {
   outline: none;
 }
 
+
+#canvas-div{
+  position: relative;
+  width: 100%;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+#text-box{
+  width: 70%;
+  height: 80%;
+  border: rgb(200, 0,0) 2px solid;
+  position: absolute;
+  left:0;
+  right:0;
+  margin:auto;
+}
+
 #canvas {
   width: 90%;
   max-width: 800px;
+  height:100%;
   /* Display */
+  left: 0;
+  right: 0;
+  /* position: absolute; */
   margin: 0.2rem auto;
   display: block;
   /* Border */
   border: rgb(0, 100, 200) 2px solid;
   border-radius: 4px;
 }
+
 
 /* Spans */
 .blue {

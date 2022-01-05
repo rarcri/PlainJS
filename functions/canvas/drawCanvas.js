@@ -76,13 +76,13 @@ const drawCanvas = (
       resetFilter(ctx);
 
       // Draw the text
-      let y = drawText(canvas, text, "white", "black", 4, 0, 70, fontFamily);
+      let y = drawText(canvas, text, "white", "black", 4, 0, -1, fontFamily);
 
       // Add 20px to the y
-      y += 20;
+      y = canvas.height - 0.1 * canvas.height;
 
       // Draw the reference text
-      drawText(canvas, reference, "red", "white", 4, y, 70, fontFamily);
+      drawText(canvas, reference, "red", "white", 4, y, -2, fontFamily);
     };
   }); // End of Promise
 };
