@@ -18,6 +18,8 @@ changeImageButton.addEventListener("click", () => {
     reference,
     text,
     true,
+    "",
+    false,
     currentAspectRatio
   );
   setCanvasDivWidth();
