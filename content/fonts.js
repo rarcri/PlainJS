@@ -1,7 +1,7 @@
 export const fonts = [
-  "serif",
-  "DancingScript-Regular",
   "sans-serif",
+  "DancingScript-Regular",
+  "serif",
   "monospace",
   "cursive",
   "PTSansNarrow-Regular",
