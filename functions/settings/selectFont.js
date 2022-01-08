@@ -7,7 +7,7 @@ fonts.forEach((font) => {
   }, 50);
 });
 
-export let currentFont = selectFont.value || "serif";
+export let currentFont = selectFont.value || "sans-serif";
 
 selectFont.addEventListener("change", () => {
   currentFont = selectFont.value;
