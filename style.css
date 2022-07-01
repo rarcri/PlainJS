@@ -1,33 +1,3 @@
-@font-face {
-  font-family: "Akronim-Regular";
-  src: url("./fonts/Akronim-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Arvo-Regular";
-  src: url("./fonts/Arvo-Regular.ttf");
-}
-
-@font-face {
-  font-family: "PTSansNarrow-Regular";
-  src: url("./fonts/PTSansNarrow-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Ephesis-Regular";
-  src: url("./fonts/Ephesis-Regular.ttf");
-}
-
-@font-face {
-  font-family: "DancingScript-Regular";
-  src: url("./fonts/static/DancingScript-Regular.ttf");
-}
-
-@font-face {
-  font-family: "StickNoBills-Regular";
-  src: url("./fonts/static/StickNoBills-Regular.ttf");
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -111,9 +81,9 @@ body {
 }
 
 #canvas {
-  width: 90%;
   max-width: 800px;
-  height:100%;
+  /* width: 60vw !important; */
+  /* height: 500px; */
   /* Display */
   left: 0;
   right: 0;
@@ -124,6 +94,7 @@ body {
   border: rgb(0, 100, 200) 2px solid;
   border-radius: 4px;
 }
+
 
 
 /* Spans */
@@ -160,4 +131,5 @@ select {
     flex-direction: column;
     justify-content: flex-start;
   }
+
 }

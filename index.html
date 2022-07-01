@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/f71019f612.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/fabric@5.2.1/dist/fabric.min.js"></script>
     <link
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
       rel="stylesheet"
@@ -30,17 +31,7 @@
 
     <!-- Settings icon -->
     <i
-      class="
-        fa fa-cog
-        inline
-        text-4xl
-        fixed
-        right-2
-        hover:bg-blue-800
-        p-1
-        rounded-full
-        cursor-pointer
-      "
+      class="fa fa-cog inline text-4xl fixed right-2 hover:bg-blue-800 p-1 rounded-full cursor-pointer"
       id="settings-cog"
     ></i>
     <!-- Settings -->
@@ -53,8 +44,12 @@
         <select class="text-black" name="font" id="selectFont"></select>
       </div>
       <div class="flex justify-center mt-5">
-        <h4>Alege aspectul: </h4>
-        <select class="text-black h-10" name="aspectRatio" id="selectAspectRatio">
+        <h4>Alege aspectul:</h4>
+        <select
+          class="text-black h-10"
+          name="aspectRatio"
+          id="selectAspectRatio"
+        >
           <option class="text-black" value="16:9">16:9</option>
           <option class="text-black" value="1:1">1:1</option>
           <option class="text-black" value="9:16">9:16</option>
@@ -118,7 +113,7 @@
     </div>
 
     <!-- Download PopUp -->
-    <div class="container hidden" id="downloadPopUp">
+    <div class="container d-none" id="downloadPopUp">
       <h3 class="text-center">Cu ce nume doriți să descărcați imaginea?</h3>
       <div class="d-flex align-items-center flex-column">
         <p>editează textul <i class="fas fa-arrow-down"></i></p>
@@ -131,8 +126,9 @@
         <button class="btn btn-primary" id="okDownloadButton">Descarcă</button>
       </div>
     </div>
-<!-- Bible PopUp  -->
-    <div id="BiblePopUp" class="container w-50 hidden">
+
+    <!-- Bible PopUp  -->
+    <div id="BiblePopUp" class="container w-50 d-none">
       <div class="row">
         <label for="BibleBook">Alege versetul dorit:</label>
         <select
@@ -152,18 +148,11 @@
         ></select>
       </div>
     </div>
-<!-- Custom PopUp -->
-    <div id="customPopUp" class="hidden top-0 w-full h-full fixed bg-gray-800">
+
+    <!-- Custom PopUp -->
+    <div id="customPopUp" class="d-none top-0 w-full h-full fixed bg-gray-800">
       <i
-        class="
-          fas
-          fa-times
-          text-3xl text-red-500
-          hover:text-red-700
-          ml-10
-          mt-5
-          cursor-pointer
-        "
+        class="fas fa-times text-3xl text-red-500 hover:text-red-700 ml-10 mt-5 cursor-pointer"
         id="xSignCustom"
       ></i>
       <div class="flex flex-col items-center justify-center">
@@ -194,11 +183,10 @@
       </div>
     </div>
 
-    <!-- <div id="canvas-div"> -->
     <!-- Canvas -->
-    <canvas id="canvas" width="800px" height="500px"></canvas>
-    <!-- <div id="text-box" ></div> -->
-    <!-- </div> -->
+    <div class="center">
+      <canvas id="canvas" width="800px" height="500px"></canvas>
+    </div>
 
     <!-- Footer -->
     <footer class="center">
@@ -209,7 +197,7 @@
       >
       <!-- Share Button -->
       <div
-        class="hidden rounded-full bg-light w-20 h-20 fixed bottom-20 right-20"
+        class="d-none rounded-full bg-light w-20 h-20 fixed bottom-20 right-20"
       >
         <a
           class="relative text-5xl left-1/4 top-1/4"
@@ -218,65 +206,13 @@
           ><i class="fa fa-facebook"></i
         ></a>
       </div>
-
-      <!-- <fb:login-button
-        scope="public_profile,email"
-        onlogin="checkLoginState();"
-      >
-      </fb:login-button> -->
     </footer>
     <div id="status"></div>
 
     <!-- Overlay image -->
     <img src="overlay.png" alt="image" id="overlay" />
-
-    <!-- Scripts -->
-    <script type="module" src="main.js"></script>
-    <script type="module" src="./functions/app/shareToFacebook.js"></script>
-
-    <!-- Canvas Scripts -->
-    <script type="module" src="./functions/canvas/fetchImage.js"></script>
-    <script type="module" src="./functions/canvas/drawText.js"></script>
-    <script type="module" src="./functions/canvas/drawImage.js"></script>
-    <script type="module" src="./functions/canvas/wrapText.js"></script>
-    <script type="module" src="./functions/canvas/blur.js"></script>
-    <script type="module" src="./functions/canvas/resetFilter.js"></script>
-    <script type="module" src="./functions/canvas/textMetrics.js"></script>
-    <script type="module" src="./functions/canvas/drawCanvas.js"></script>
-    <script type="module" src="functions/canvas/setAspectRatio.js"></script>
-    <script src="./functions/canvas/download.js"></script>
-
-    <!-- App scripts -->
-    <script type="module" src="./functions/app/toggleDownloadPopUp.js"></script>
-    <script type="module" src="./functions/app/BiblePopUp.js"></script>
-    <script type="module" src="./functions/app/toggleBiblePopUp.js"></script>
-    <script type="module" src="./functions/app/saveOnServer.js"></script>
-    <script type="module" src="./functions/app/getNew.js"></script>
-    <script type="module" src="./functions/app/custom.js"></script>
-    <script type="module" src="./functions/app/changeImage.js"></script>
-    <script type="module" src="./functions/app/setCanvasDivWidth.js"></script>
-
-    <!-- Settings scripts -->
-    <script type="module" src="./functions/settings/selectFont.js"></script>
-    <script type="module" src="./functions/settings/saveSettings.js"></script>
-    <script type="module" src="./functions/settings/toggleSettings.js"></script>
-    <script type="module" src="./functions/settings/selectAspectRatio.js"></script>
-
-    <!-- Bible scripts -->
-    <script type="module" src="./functions/bible/searchInBible.js"></script>
-    <script type="module" src="./functions/bible/searchBook.js"></script>
-    <script type="module" src="./functions/bible/callSearchInBible.js"></script>
-
-    <!-- Content scripts -->
-    <script type="module" src="./content/texte.js"></script>
-    <script type="module" src="./content/romcor.js"></script>
-    <script type="module" src="./content/BibleBooks.js"></script>
-    <script type="module" src="./content/fonts.js"></script>
-    <!-- <script
-      async
-      defer
-      crossorigin="anonymous"
-      src="https://connect.facebook.net/en_US/sdk.js"
-    ></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/canvas.js"></script>
   </body>
 </html>
